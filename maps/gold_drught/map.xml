@@ -21,10 +21,10 @@
     <limit>9001</limit>
 </score>
 <teams>
-    <team color="dark red" max="25">read tem</team>
-    <team color="blue" max="25">blu tem</team>
-    <team color="gold" max="25">oranj tem</team>
-    <team color="dark purple" max="25">purlp tem</team>
+    <team id="read-tem" color="dark red" max="25">read tem</team>
+    <team id="blu-tem" color="blue" max="25">blu tem</team>
+    <team id="oranj-tem" color="gold" max="25">oranj tem</team>
+    <team id="purlp-tem" color="dark purple" max="25">purlp tem</team>
 </teams>
     <kits>
     <kit name="spawn">
@@ -46,16 +46,16 @@
 </kits>
 <spawns>
     <spawns safe="true">
-        <spawn team="read" kit="spawn">
+        <spawn team="read-tem" kit="spawn">
             <cuboid min="-56,0,94" max="-76,15,85"/>
         </spawn>
-        <spawn team="oranj" kit="spawn">
+        <spawn team="oranj-tem" kit="spawn">
             <cuboid min="-24,0,165" max="-38,15,149"/>
         </spawn>
-        <spawn team="purlp" kit="spawn">
+        <spawn team="purlp-tem" kit="spawn">
             <cuboid min="-107,0,191" max="-97,15,177"/>
         </spawn>
-        <spawn team="blu" kit="spawn">
+        <spawn team="blu-tem" kit="spawn">
             <cuboid min="-125,0,103" max="-138,15,120"/>
         </spawn>
     </spawns>
