@@ -1,7 +1,26 @@
 # PGM Public Maps
 
-Public maps created for the custom PGM Minecraft plugin.
+:european_castle: Publicly downloadable maps created for the open-source [Project Ares plugins](https://github.com/OvercastNetwork/ProjectAres).
 
-All maps can be downloaded at https://mcresourcepile.github.io/maps/pgm. Please check what license each map uses on our [website](https://mcresourcepile.github.io/maps/pgm) before using them on public servers. If you wish to use a non-commercial map for commercial purposes, please get in contact with the map authors. Our policy regarding maps, map downloads, and map acquisition can be found [here](https://mcresourcepile.github.io/policies/maps).
+All maps can be downloaded from the [PGM Collection](https://mcresourcepile.github.io/maps/pgm) on our website.
 
-These maps were created for PGM, however never made it to the Overcast Network repository. If you're looking for Overcast Network maps, visit [this repository](https://github.com/MCResourcePile/overcast-maps) or have a look on our [website](https://mcresourcepile.github.io/mapstack/overcast).
+All maps are assumed to be released under a [non-commercial license](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) unless otherwise stated on the ResourcePile website or in the included notice in the compiled downloads from the ResourcePile website. For more information on map use and acquisition, refer to our [map policy](https://mcresourcepile.github.io/policies/maps).
+
+Contributing
+-----------------
+
+### **For map authors:**  
+If you have a map that is designed for use with PGM and would like to add it to our collections, please get in contact with one of our [managers](https://mcresourcepile.github.io/staff) through Discord.
+
+### **For contributors:**  
+Before adding a new map, ensure that you can answer **all** the following questions with "yes".
+
+- Does the folder name match the slug entered into the corresponding maps data file?
+- Is the XML included and properly formatted (4 spaces, no tabs, etc)?
+- Is the `map.png` included, have the correct dimensions (290 x 246), and not distorted?
+- Has the map been correctly pruned?
+
+Notice
+-----------------
+
+If your map has been added to this repository without permission, or you no longer want it publicly available, please contact one of our [managers](https://mcresourcepile.github.io/staff) through Discord and we will remove the contect as soon as possible.
