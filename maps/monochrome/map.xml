@@ -91,14 +91,14 @@
     <kit id="redKit" parents="base-kit">
       <helmet material="stained_glass" damage="14" locked="true"/>
       <chestplate material="leather chestplate" color="E92816" locked="true"/>
-      <leggings material="leather leggings" color="E92816" locked="true/>
-      <boots material="leather boots" color="E92816" locked="true/>
+      <leggings material="leather leggings" color="E92816" locked="true"/>
+      <boots material="leather boots" color="E92816" locked="true"/>
     </kit>
     <kit id="blueKit" parents="base-kit">
-      <helmet material="stained_glass" damage="11" locked="true/>
-      <chestplate material="leather chestplate" color="B43D0" locked="true/>
-      <leggings material="leather leggings" color="B43D0" locked="true/>
-      <boots material="leather boots" color="B43D0" locked="true/>
+      <helmet material="stained_glass" damage="11" locked="true"/>
+      <chestplate material="leather chestplate" color="B43D0" locked="true"/>
+      <leggings material="leather leggings" color="B43D0" locked="true"/>
+      <boots material="leather boots" color="B43D0" locked="true"/>
     </kit>
   </kits>
   <itemremove>
