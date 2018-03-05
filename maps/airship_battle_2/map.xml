@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <map proto= "1.4.3">
-	<name>Airship Battles 2</name>
+	<name>Airship Battle 2</name>
 	<version>1.0.0</version>
 	<gamemode>dtc</gamemode>
 	<objective>Leak the enemy's core</objective>
