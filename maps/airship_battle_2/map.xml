@@ -61,4 +61,7 @@
 		<cuboid id="red-drop" min="-40.5,69,26.5" max="-44.5,109,30.5"/>
 		<apply region="red-drop" block-break="never" block-place="never" message="You may not modify the spawn drop!"/>
 	</regions>
+	<hunger>
+    		<depletion>off</depletion>
+	</hunger>
 </map>
