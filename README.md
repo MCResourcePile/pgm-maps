@@ -1,8 +1,8 @@
-# PGM Public Maps
+# Race For Wool Public Maps
 
-:european_castle: Publicly downloadable maps created for the open-source [Project Ares plugins](https://github.com/OvercastNetwork/ProjectAres).
+:european_castle: Publicly downloadable maps created for the [Race For Wool](https://discord.gg/NcmrPDE) gamemode style.
 
-All maps can be downloaded from the [PGM Collection](https://mcresourcepile.github.io/maps/pgm) on our website.
+All maps can be downloaded from the [Race For Wool Collection](https://mcresourcepile.github.io/maps/rfw) on our website.
 
 All maps are assumed to be released under a [non-commercial license](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) unless otherwise stated on the ResourcePile website or in the included notice in the compiled downloads from the ResourcePile website. For more information on map use and acquisition, refer to our [map policy](https://mcresourcepile.github.io/policies/maps).
 
@@ -10,7 +10,7 @@ Contributing
 -----------------
 
 ### **For map authors:**  
-If you have a map that is designed for use with PGM and would like to add it to our collections, please get in contact with one of our [managers](https://mcresourcepile.github.io/staff) through Discord.
+If you have a map that is designed for use with Race For Wool and would like to add it to our collections, please get in contact with one of our [managers](https://mcresourcepile.github.io/staff) through Discord.
 
 ### **For contributors:**  
 Before adding a new map, ensure that you can answer **all** the following questions with "yes".
