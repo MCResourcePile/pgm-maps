@@ -11,7 +11,7 @@
     <alert after="3s">2</alert>
     <alert after="4s">1</alert>
 </broadcasts>
-<destroyables name="Spawn-Tubes" materials="95:11; 95:14" show="false" mode-changes="true">
+<destroyables name="Spawn-Tubes" materials="stained glass" show="false" mode-changes="true">
     <destroyable owner="red-team">
         <region><region id="red-glass"/></region>
     </destroyable>
