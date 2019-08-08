@@ -98,16 +98,32 @@
 <regions>
     <negative id="cant-build">
         <union id="buildable">
-            <cuboid min="174,20,175" max="183,35,166"/> <!-- Red side -->
-            <cuboid min="174,20,225" max="183,35,216"/> <!-- Blue side -->
+            <cuboid min="174,20,175" max="183,35,166"/> <!-- Red side, north -->
+            <cuboid min="174,20,225" max="183,35,216"/> <!-- Blue side, south -->
         </union>
     </negative>
     <cuboid id="map" min="172,0,164" max="185,55,227"/>
     <cuboid id="bridge" min="179,25,216" max="178,27,175"/>
     <!-- Applicators -->
     <apply block="never" region="cant-build" message="You may not place or break blocks outside the build zone"/>
+    <union name="drops">
+        <cuboid name="red-drop" min="182,51,174" max="181,51,223"/>
+        <cuboid name="blue-drop" min="175,51,217" max="175,51,167"/>
+    </union>
 </regions>
-<destroyables name="glass" show="false" required="false" mode-changes="true" materials="stained glass:15" region="map"/>
+<!-- Destroyables are impossible to break as they are in a deny-all region -->
+<!-- Used to make the glass starting platforms disappear and the bridge to appear -->
+<destroyables name="glass" show="false" required="false" mode-changes="true" materials="stained glass:15" region="map">
+    <destroyable id="red-drop" owner="red">
+        <region name="red-drop"/>
+    </destroyable>
+    <destroyable id="blue-drop" owner="blue">
+        <region name="blue-drop"/>
+    </destroyable>
+    <destroyable owner="red">
+        <region id="bridge"/>
+    </destroyable>
+</destroyables>
 <modes>
     <mode after="30s" material="air" show-before="30s" name="Dropping you into the map"/>
     <mode after="2m30s" material="stained glass:15" show-before="30s" name="Connecting the platforms"/>
