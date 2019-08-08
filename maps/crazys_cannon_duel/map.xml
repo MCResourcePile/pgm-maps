@@ -132,7 +132,10 @@
 <broadcasts>
     <alert after="1s">You have 30 seconds to sort your inventory</alert>
 </broadcasts>
-<blitz/>
+<blitz>
+    <lives>1</lives>
+    <broadcastLives>false</broadcastLives>
+</blitz>
 <gamerules>
     <doDaylightCycle>false</doDaylightCycle>
 </gamerules>
