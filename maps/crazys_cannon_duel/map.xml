@@ -124,6 +124,7 @@
         <region id="bridge"/>
     </destroyable>
 </destroyables>
+<!-- Changes the state of the selectd regions referended by the <destroyables> element -->
 <modes>
     <mode after="30s" material="air" show-before="30s" name="Dropping you into the map"/>
     <mode after="2m30s" material="stained glass:15" show-before="30s" name="Connecting the platforms"/>
