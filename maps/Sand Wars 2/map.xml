@@ -47,7 +47,6 @@
         <spawn team="blue" kit="blue" yaw="90">
             <cuboid min="86,9,11" max="106,128,-9"/> <!-- regular tower spawn -->
             <cuboid min="85,6,-10" max="106,6,11"/> <!-- atop the obsidian -->
-            <point>1,8,0</point> <!-- last resort spawn in the center pad -->
         </spawn>
         <spawn team="red" kit="red" yaw="-90">
             <cuboid min="71,9,11" max="51,128,-9"/> <!-- regular tower spawn -->
