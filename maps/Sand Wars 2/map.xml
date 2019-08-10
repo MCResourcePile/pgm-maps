@@ -104,5 +104,8 @@
     <yield>0</yield>
     <licensing>off</licensing>
 </tnt>
+<gamerules>
+	<doFireTick>on</doFireTick>
+</gamerules>
 <timelock>on</timelock>
 </map>
