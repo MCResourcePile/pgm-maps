@@ -105,7 +105,7 @@
     <licensing>off</licensing>
 </tnt>
 <gamerules>
-	<doFireTick>on</doFireTick>
+	<doFireTick>true</doFireTick>
 </gamerules>
 <timelock>on</timelock>
 </map>
