@@ -2,15 +2,14 @@
 <map proto="1.3.3">
 <name>Q*Boid</name>
 <version>1.0.0</version>
-<!-- This XML file is for spcifically testing hills, use map.xml to refer to newer features -->
-<objective>Capture and kill players to get 300 points to win the game.</objective>
+<objective>Capture and kill players to get 1800 points to win the game.</objective>
 <authors>
     <author uuid="5c79d2c9-a4f0-4343-a84b-e1720f13009b"/>
     <!-- CoWinkKeyDinkInc -->
 </authors>
 <teams>
     <team color="yellow" max="16">Yellow Team</team>
-    <team color="lime" max="16">Lime Team</team>
+    <team color="green" max="16">Lime Team</team>
 </teams>
 <kits>
     <kit name="spawn" force="true">
@@ -40,6 +39,7 @@
     </kit>
 </kits>
 <spawns>
+	<!-- make these points -->
     <spawn team="yellow" kit="yellow" yaw="0">
         <cuboid min="69,26,-34" max="66,26,-36"/>
         <cuboid min="76,19,-34" max="73,19,-36"/>
@@ -50,8 +50,8 @@
         <cuboid min="17,19,19" max="15,19,15"/>
         <cuboid min="17,12,26" max="15,12,29"/>
     </spawn>
-    <default yaw="134">
-        <block>86,8,13</block>
+    <default yaw="135">
+        <point>85.5,8,31.5</point>
     </default>
 </spawns>
 <!-- now called kill-rewards -->
@@ -95,6 +95,7 @@
     <item>leather chestplate</item>
     <item>leather helmet</item>
     <item>leather leggings</item>
+    <item>wool</item>
 </itemremove>
 <tnt>
     <fuse>3s</fuse>
@@ -126,12 +127,21 @@
     </filter>
 </filters>
 <score>
-    <limit>300</limit>
+    <limit>1800</limit>
 </score>
+<control-points capture-players="lead" incremental="true" show-progress="false">
+	<control-point name="Cube 1" capture-time="10s" points="3" neutral-state="true">
+		<capture><cuboid min="36,49,-18" max="43,50,-11"/></capture>
+		<progress><cuboid min="36,49,-18" max="43,50,-11"/></progress>
+		<captured><cuboid min="36,49,-18" max="43,50,-11"/></captured>
+	</control-point>
+</control-points>
+<!-- made obsolete by control points -->
+<!--
 <king>
     <hills>
-      <!-- Hills are numbered from top to bottom, left to right -->
-      <!-- subtract the X coordinate by 1000, add the Z coordinate by 400 -->
+       COMMENT Hills are numbered from top to bottom, left to right 
+       COMMENT subtract the X coordinate by 1000, add the Z coordinate by 400 
         <hill name="Cube 1" capture-time="4s" neutral-state="false" points="3" show="false" show-progress="false">
             <capture>
                 <cuboid min="36,50,-18" max="43,50,-11"/>
@@ -442,4 +452,5 @@
         </hill>
     </hills>
 </king>
+-->
 </map>
