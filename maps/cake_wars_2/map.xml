@@ -52,12 +52,13 @@
      <cuboid min="232,81,213" max="251,96,214"/>
     </default>
  </spawns>
+ <!-- default gold core mode in 15 minutes, default glass core mode in 20 minutes -->
  <cores material="obsidian" leak="3">
     <core team="Fishnets" name="Fishnets core">
-     <cuboid min="317,76,212" max="320,69,215"/>
+     <cuboid min="317,91,216" max="321,84,213"/>
     </core>
     <core team="ButterHeads" name="ButterHeads core">
-     <cuboid min="116,76,215" max="163,69,212"/>
+     <cuboid min="167,91,212" max="163,84,216"/>
     </core>
  </cores>
  <maxbuildheight>110</maxbuildheight>
