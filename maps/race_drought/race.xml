@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <map proto="1.3.0">
 <teams>
-    <team color="blue" max="1" max-overfill="1">Blue Car</team>
-    <team color="red" max="1" max-overfill="1">Red Car</team>
-    <team color="dark green" max="1" max-overfill="1">Green Car</team>
-    <team color="yellow" max="1" max-overfill="1">Yellow Car</team>
-    <team color="dark purple" max="1" max-overfill="1">Purple Car</team>
-    <team color="light purple" max="1" max-overfill="1">Pink Car</team>
-    <team color="gold" max="1" max-overfill="1">Orange Car</team>
-    <team color="green" max="1" max-overfill="1">Lime Car</team>
-    <team color="dark aqua" max="1" max-overfill="1">Cyan Car</team>
-    <team color="gray" max="1" max-overfill="1">Gray Car</team>
-    <team color="dark blue" max="1" max-overfill="1">Navy Car</team>
-    <team color="black" max="1" max-overfill="1">Black Car</team>
+    <team id="blue" color="blue" max="1" max-overfill="1">Blue Car</team>
+    <team id="red" color="red" max="1" max-overfill="1">Red Car</team>
+    <team id="green" color="dark green" max="1" max-overfill="1">Green Car</team>
+    <team id="yellow" color="yellow" max="1" max-overfill="1">Yellow Car</team>
+    <team id="purple" color="dark purple" max="1" max-overfill="1">Purple Car</team>
+    <team id="pink" color="light purple" max="1" max-overfill="1">Pink Car</team>
+    <team id="orange" color="gold" max="1" max-overfill="1">Orange Car</team>
+    <team id="lime" color="green" max="1" max-overfill="1">Lime Car</team>
+    <team id="cyan" color="dark aqua" max="1" max-overfill="1">Cyan Car</team>
+    <team id="gray" color="gray" max="1" max-overfill="1">Gray Car</team>
+    <team id="navy" color="dark blue" max="1" max-overfill="1">Navy Car</team>
+    <team id="black" color="black" max="1" max-overfill="1">Black Car</team>
 </teams>
 <kits>
     <kit name="blue"><helmet damage="3">wool</helmet></kit>
