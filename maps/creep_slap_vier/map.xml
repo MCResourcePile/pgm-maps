@@ -13,8 +13,8 @@
 	</contributors>
 	<teams>
 		<team color="red" id="red" min="1" max="2" max-overfill="2">Red</team>
-		<team color="purple" id="purple" min="1" max="2" max-overfill="2">Purple</team>
-		<team color="orange" id="orange" min="1" max="2" max-overfill="2">Orange</team>
+		<team color="dark purple" id="purple" min="1" max="2" max-overfill="2">Purple</team>
+		<team color="gold" id="orange" min="1" max="2" max-overfill="2">Orange</team>
 		<team color="yellow" id="yellow" min="1" max="2" max-overfill="2">Yellow</team>
 	</teams>
 	<score>
