@@ -137,12 +137,12 @@
 		<progress><cuboid min="36,113,-18" max="43,114,-11"/></progress>
 		<captured><cuboid min="36,113,-18" max="43,114,-11"/></captured>
 	</control-point>
-	<control-point name="Cube 2" capture-time="5s" points="2" neutral-state="true">
+	<control-point name="Cube 2" capture-time="7s" points="2" neutral-state="true">
 		<capture><cuboid min="36,106,-11" max="43,107,-4"/></capture>
 		<progress><cuboid min="36,106,-11" max="43,107,-4"/></progress>
 		<captured><cuboid min="36,106,-11" max="43,107,-4"/></captured>
 	</control-point>
-	<control-point name="Cube 3" capture-time="5s" points="2" neutral-state="true">
+	<control-point name="Cube 3" capture-time="7s" points="2" neutral-state="true">
 		<capture><cuboid min="43,106,-11" max="50,107,-18"/></capture>
 		<progress><cuboid min="43,106,-11" max="50,107,-18"/></progress>
 		<captured><cuboid min="43,106,-11" max="50,107,-18"/></captured>
@@ -274,4 +274,34 @@
 		<captured><cuboid min="78,71,-11" max="85,72,-18"/></captured>
 	</control-point>
 </control-points>
+<tutorial>
+    <stage title="King of the Hill">
+        <message>
+            <line>`rThis map is a `a`lKing of the Hill `r(KotH) map.</line>
+            <line>`rThe objective is to capture and keep control of as much hills as possible!</line>
+        </message>
+        <teleport>
+            <point yaw="130" pitch="35">55,92,18</point>
+        </teleport>
+    </stage>
+    <stage title="Spawn and Supplies">
+        <message>
+            <line>`rYou spawn on top of one of the platforms with basic gear provided.</line>
+            <line>`rYou can get more supplies and TNT by killing enemies and getting killstreaks!</line>
+        </message>
+        <teleport>
+            <point yaw="180" pitch="45">15,91,29</point>
+        </teleport>
+    </stage>
+    <stage title="The Top Three">
+        <message>
+            <line>`bThe top three hills will give your team extra points if you capture them.</line>
+            <line>The bottom two give you two points a second, and the top gives three points a second!</line>
+        </message>
+        <teleport>
+            <point yaw="135" pitch="45">48,115,-5.5</point>
+        </teleport>
+    </stage>
+</tutorial>
+<timelock>on</timelock>
 </map>
