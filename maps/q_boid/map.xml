@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <map proto="1.3.3">
 <name>Q*Boid</name>
-<version>1.0.0</version>
+<version>1.0.1</version>
 <objective>Capture the cubes to get 1800 points to win the game.</objective>
 <authors>
     <author uuid="5c79d2c9-a4f0-4343-a84b-e1720f13009b"/>
@@ -39,7 +39,7 @@
     </kit>
 </kits>
 <spawns>
-	<!-- make these points -->
+    <!-- make these points -->
     <spawn team="yellow" kit="yellow" yaw="0">
         <cuboid min="69,90,-34" max="66,90,-35"/>
         <cuboid min="76,83,-34" max="73,83,-35"/>
@@ -106,24 +106,37 @@
     <damage ally="false" self="false" enemy="true" other="false">block explosion</damage>
 </disabledamage>
 <regions>
-    <apply block-break="no-break">
-      <rectangle min="oo,oo" max="oo,oo"/>
+    <apply block="no-break">
+        <rectangle min="-oo,-oo" max="oo,oo"/>
     </apply>
+    <apply block="deny-all" region="spawns" message="You can't interact with spawn platforms!"/>
+    <union name="spawns">
+        <union name="lime-spawn">
+            <rectangle min="34,12" max="18,15"/>
+            <rectangle min="18,15" max="14,11"/>
+            <rectangle min="34,19" max="18,22"/>
+            <rectangle min="18,23" max="14,18"/>
+            <rectangle min="34,26" max="18,29"/>
+            <rectangle min="18,30" max="14,25"/>
+        </union>
+        <union name="yellow-spawn">
+            <rectangle min="69,-20" max="66,-33"/>
+            <rectangle min="65,-33" max="70,-37"/>
+            <rectangle min="76,-20" max="73,-33"/>
+            <rectangle min="72,-33" max="77,-37"/>
+            <rectangle min="83,-20" max="80,-33"/>
+            <rectangle min="79,-33" max="84,-37"/>
+        </union>
+    </union>
 </regions>
 <filters>
     <filter name="no-break">
-        <not>
-            <all>
-                <any>
-                    <block>quartz block</block>
-                    <block>stained clay</block>
-                </any>
-                <any>
-                    <filter name="allow-world"/>
-                    <filter name="allow-blocks"/>
-                </any>
-            </all>
-        </not>
+        <deny>
+            <any>
+                <block>stained clay</block>
+                <block>quartz block</block>
+            </any>
+        </deny>
     </filter>
 </filters>
 <score>
@@ -132,147 +145,147 @@
 <!-- cubes are numbered from top to bottom, left to right -->
 <!-- increase everything by 64 blocks -->
 <control-points capture-players="lead" incremental="true" show-progress="false">
-	<control-point name="Cube 1" capture-time="10s" points="3" neutral-state="true">
-		<capture><cuboid min="36,113,-18" max="43,114,-11"/></capture>
-		<progress><cuboid min="36,113,-18" max="43,114,-11"/></progress>
-		<captured><cuboid min="36,113,-18" max="43,114,-11"/></captured>
-	</control-point>
-	<control-point name="Cube 2" capture-time="7s" points="2" neutral-state="true">
-		<capture><cuboid min="36,106,-11" max="43,107,-4"/></capture>
-		<progress><cuboid min="36,106,-11" max="43,107,-4"/></progress>
-		<captured><cuboid min="36,106,-11" max="43,107,-4"/></captured>
-	</control-point>
-	<control-point name="Cube 3" capture-time="7s" points="2" neutral-state="true">
-		<capture><cuboid min="43,106,-11" max="50,107,-18"/></capture>
-		<progress><cuboid min="43,106,-11" max="50,107,-18"/></progress>
-		<captured><cuboid min="43,106,-11" max="50,107,-18"/></captured>
-	</control-point>
-	<control-point name="Cube 4" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="36,99,-4" max="43,100,3"/></capture>
-		<progress><cuboid min="36,99,-4" max="43,100,3"/></progress>
-		<captured><cuboid min="36,99,-4" max="43,100,3"/></captured>
-	</control-point>
-	<control-point name="Cube 5" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="43,99,-4" max="50,100,-11"/></capture>
-		<progress><cuboid min="43,99,-4" max="50,100,-11"/></progress>
-		<captured><cuboid min="43,99,-4" max="50,100,-11"/></captured>
-	</control-point>
-	<control-point name="Cube 6" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="50,99,-11" max="57,100,-18"/></capture>
-		<progress><cuboid min="50,99,-11" max="57,100,-18"/></progress>
-		<captured><cuboid min="50,99,-11" max="57,100,-18"/></captured>
-	</control-point>
-	<control-point name="Cube 7" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="36,92,10" max="43,93,3"/></capture>
-		<progress><cuboid min="36,92,10" max="43,93,3"/></progress>
-		<captured><cuboid min="36,92,10" max="43,93,3"/></captured>
-	</control-point>
-	<control-point name="Cube 8" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="43,92,3" max="50,93,-4"/></capture>
-		<progress><cuboid min="43,92,3" max="50,93,-4"/></progress>
-		<captured><cuboid min="43,92,3" max="50,93,-4"/></captured>
-	</control-point>
-	<control-point name="Cube 9" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="50,92,-4" max="57,93,-11"/></capture>
-		<progress><cuboid min="50,92,-4" max="57,93,-11"/></progress>
-		<captured><cuboid min="50,92,-4" max="57,93,-11"/></captured>
-	</control-point>
-	<control-point name="Cube 10" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="57,92,-11" max="64,93,-18"/></capture>
-		<progress><cuboid min="57,92,-11" max="64,93,-18"/></progress>
-		<captured><cuboid min="57,92,-11" max="64,93,-18"/></captured>
-	</control-point>
-	<control-point name="Cube 11" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="36,85,17" max="43,86,10"/></capture>
-		<progress><cuboid min="36,85,17" max="43,86,10"/></progress>
-		<captured><cuboid min="36,85,17" max="43,86,10"/></captured>
-	</control-point>
-	<control-point name="Cube 12" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="43,85,10" max="50,86,3"/></capture>
-		<progress><cuboid min="43,85,10" max="50,86,3"/></progress>
-		<captured><cuboid min="43,85,10" max="50,86,3"/></captured>
-	</control-point>
-	<control-point name="Cube 13" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="50,85,3" max="57,86,-4"/></capture>
-		<progress><cuboid min="50,85,3" max="57,86,-4"/></progress>
-		<captured><cuboid min="50,85,3" max="57,86,-4"/></captured>
-	</control-point>
-	<!-- check if these two coordinates clash -->
-	<control-point name="Cube 14" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="57,85,-4" max="64,86,-11"/></capture>
-		<progress><cuboid min="57,85,-4" max="64,86,-11"/></progress>
-		<captured><cuboid min="57,85,-4" max="64,86,-11"/></captured>
-	</control-point>
-	<control-point name="Cube 15" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="64,85,-11" max="71,86,-18"/></capture>
-		<progress><cuboid min="64,85,-11" max="71,86,-18"/></progress>
-		<captured><cuboid min="64,85,-11" max="71,86,-18"/></captured>
-	</control-point>
-	<control-point name="Cube 16" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="36,78,24" max="43,79,17"/></capture>
-		<progress><cuboid min="36,78,24" max="43,79,17"/></progress>
-		<captured><cuboid min="36,78,24" max="43,79,17"/></captured>
-	</control-point>
-	<control-point name="Cube 17" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="43,78,17" max="50,79,10"/></capture>
-		<progress><cuboid min="43,78,17" max="50,79,10"/></progress>
-		<captured><cuboid min="43,78,17" max="50,79,10"/></captured>
-	</control-point>
-	<control-point name="Cube 18" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="50,78,10" max="57,79,-4"/></capture>
-		<progress><cuboid min="50,78,10" max="57,79,-4"/></progress>
-		<captured><cuboid min="50,78,10" max="57,79,-4"/></captured>
-	</control-point>
-	<control-point name="Cube 19" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="57,78,3" max="64,79,-4"/></capture>
-		<progress><cuboid min="57,78,3" max="64,79,-4"/></progress>
-		<captured><cuboid min="57,78,3" max="64,79,-4"/></captured>
-	</control-point>
-	<control-point name="Cube 20" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="64,78,-4" max="71,79,-11"/></capture>
-		<progress><cuboid min="64,78,-4" max="71,79,-11"/></progress>
-		<captured><cuboid min="64,78,-4" max="71,79,-11"/></captured>
-	</control-point>
-	<control-point name="Cube 21" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="71,78,-11" max="78,79,-18"/></capture>
-		<progress><cuboid min="71,78,-11" max="78,79,-18"/></progress>
-		<captured><cuboid min="71,78,-11" max="78,79,-18"/></captured>
-	</control-point>
-	<control-point name="Cube 22" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="36,71,31" max="43,72,24"/></capture>
-		<progress><cuboid min="36,71,31" max="43,72,24"/></progress>
-		<captured><cuboid min="36,71,31" max="43,72,24"/></captured>
-	</control-point>
-	<control-point name="Cube 23" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="43,71,24" max="50,72,17"/></capture>
-		<progress><cuboid min="43,71,24" max="50,72,17"/></progress>
-		<captured><cuboid min="43,71,24" max="50,72,17"/></captured>
-	</control-point>
-	<control-point name="Cube 24" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="50,71,17" max="57,72,10"/></capture>
-		<progress><cuboid min="50,71,17" max="57,72,10"/></progress>
-		<captured><cuboid min="50,71,17" max="57,72,10"/></captured>
-	</control-point>
-	<control-point name="Cube 25" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="57,71,10" max="64,72,3"/></capture>
-		<progress><cuboid min="57,71,10" max="64,72,3"/></progress>
-		<captured><cuboid min="57,71,10" max="64,72,3"/></captured>
-	</control-point>
-	<control-point name="Cube 26" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="63,71,3" max="71,72,-4"/></capture>
-		<progress><cuboid min="63,71,3" max="71,72,-4"/></progress>
-		<captured><cuboid min="63,71,3" max="71,72,-4"/></captured>
-	</control-point>
-	<control-point name="Cube 27" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="71,71,-4" max="78,72,-11"/></capture>
-		<progress><cuboid min="71,71,-4" max="78,72,-11"/></progress>
-		<captured><cuboid min="71,71,-4" max="78,72,-11"/></captured>
-	</control-point>
-	<control-point name="Cube 28" capture-time="5s" points="1" neutral-state="false">
-		<capture><cuboid min="78,71,-11" max="85,72,-18"/></capture>
-		<progress><cuboid min="78,71,-11" max="85,72,-18"/></progress>
-		<captured><cuboid min="78,71,-11" max="85,72,-18"/></captured>
-	</control-point>
+    <control-point name="Cube 1" capture-time="10s" points="3" neutral-state="true">
+        <capture><cuboid min="36,113,-18" max="43,115,-11"/></capture>
+        <progress><cuboid min="36,113,-18" max="43,115,-11"/></progress>
+        <captured><cuboid min="36,113,-18" max="43,115,-11"/></captured>
+    </control-point>
+    <control-point name="Cube 2" capture-time="7s" points="2" neutral-state="true">
+        <capture><cuboid min="36,106,-11" max="43,108,-4"/></capture>
+        <progress><cuboid min="36,106,-11" max="43,108,-4"/></progress>
+        <captured><cuboid min="36,106,-11" max="43,108,-4"/></captured>
+    </control-point>
+    <control-point name="Cube 3" capture-time="7s" points="2" neutral-state="true">
+        <capture><cuboid min="43,106,-11" max="50,108,-18"/></capture>
+        <progress><cuboid min="43,106,-11" max="50,108,-18"/></progress>
+        <captured><cuboid min="43,106,-11" max="50,108,-18"/></captured>
+    </control-point>
+    <control-point name="Cube 4" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="36,99,-4" max="43,101,3"/></capture>
+        <progress><cuboid min="36,99,-4" max="43,101,3"/></progress>
+        <captured><cuboid min="36,99,-4" max="43,101,3"/></captured>
+    </control-point>
+    <control-point name="Cube 5" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="43,99,-4" max="50,101,-11"/></capture>
+        <progress><cuboid min="43,99,-4" max="50,101,-11"/></progress>
+        <captured><cuboid min="43,99,-4" max="50,101,-11"/></captured>
+    </control-point>
+    <control-point name="Cube 6" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="50,99,-11" max="57,101,-18"/></capture>
+        <progress><cuboid min="50,99,-11" max="57,101,-18"/></progress>
+        <captured><cuboid min="50,99,-11" max="57,101,-18"/></captured>
+    </control-point>
+    <control-point name="Cube 7" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="36,92,10" max="43,94,3"/></capture>
+        <progress><cuboid min="36,92,10" max="43,94,3"/></progress>
+        <captured><cuboid min="36,92,10" max="43,94,3"/></captured>
+    </control-point>
+    <control-point name="Cube 8" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="43,92,3" max="50,94,-4"/></capture>
+        <progress><cuboid min="43,92,3" max="50,94,-4"/></progress>
+        <captured><cuboid min="43,92,3" max="50,94,-4"/></captured>
+    </control-point>
+    <control-point name="Cube 9" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="50,92,-4" max="57,94,-11"/></capture>
+        <progress><cuboid min="50,92,-4" max="57,94,-11"/></progress>
+        <captured><cuboid min="50,92,-4" max="57,94,-11"/></captured>
+    </control-point>
+    <control-point name="Cube 10" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="57,92,-11" max="64,94,-18"/></capture>
+        <progress><cuboid min="57,92,-11" max="64,94,-18"/></progress>
+        <captured><cuboid min="57,92,-11" max="64,94,-18"/></captured>
+    </control-point>
+    <control-point name="Cube 11" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="36,85,17" max="43,87,10"/></capture>
+        <progress><cuboid min="36,85,17" max="43,87,10"/></progress>
+        <captured><cuboid min="36,85,17" max="43,87,10"/></captured>
+    </control-point>
+    <control-point name="Cube 12" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="43,85,10" max="50,87,3"/></capture>
+        <progress><cuboid min="43,85,10" max="50,87,3"/></progress>
+        <captured><cuboid min="43,85,10" max="50,87,3"/></captured>
+    </control-point>
+    <control-point name="Cube 13" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="50,85,3" max="57,87,-4"/></capture>
+        <progress><cuboid min="50,85,3" max="57,87,-4"/></progress>
+        <captured><cuboid min="50,85,3" max="57,87,-4"/></captured>
+    </control-point>
+    <!-- check if these two coordinates clash -->
+    <control-point name="Cube 14" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="57,85,-4" max="64,87,-11"/></capture>
+        <progress><cuboid min="57,85,-4" max="64,87,-11"/></progress>
+        <captured><cuboid min="57,85,-4" max="64,87,-11"/></captured>
+    </control-point>
+    <control-point name="Cube 15" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="64,85,-11" max="71,87,-18"/></capture>
+        <progress><cuboid min="64,85,-11" max="71,87,-18"/></progress>
+        <captured><cuboid min="64,85,-11" max="71,87,-18"/></captured>
+    </control-point>
+    <control-point name="Cube 16" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="36,78,24" max="43,80,17"/></capture>
+        <progress><cuboid min="36,78,24" max="43,80,17"/></progress>
+        <captured><cuboid min="36,78,24" max="43,80,17"/></captured>
+    </control-point>
+    <control-point name="Cube 17" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="43,78,17" max="50,80,10"/></capture>
+        <progress><cuboid min="43,78,17" max="50,80,10"/></progress>
+        <captured><cuboid min="43,78,17" max="50,80,10"/></captured>
+    </control-point>
+    <control-point name="Cube 18" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="50,78,10" max="57,80,-4"/></capture>
+        <progress><cuboid min="50,78,10" max="57,80,-4"/></progress>
+        <captured><cuboid min="50,78,10" max="57,80,-4"/></captured>
+    </control-point>
+    <control-point name="Cube 19" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="57,78,3" max="64,80,-4"/></capture>
+        <progress><cuboid min="57,78,3" max="64,80,-4"/></progress>
+        <captured><cuboid min="57,78,3" max="64,80,-4"/></captured>
+    </control-point>
+    <control-point name="Cube 20" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="64,78,-4" max="71,80,-11"/></capture>
+        <progress><cuboid min="64,78,-4" max="71,80,-11"/></progress>
+        <captured><cuboid min="64,78,-4" max="71,80,-11"/></captured>
+    </control-point>
+    <control-point name="Cube 21" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="71,78,-11" max="78,80,-18"/></capture>
+        <progress><cuboid min="71,78,-11" max="78,80,-18"/></progress>
+        <captured><cuboid min="71,78,-11" max="78,80,-18"/></captured>
+    </control-point>
+    <control-point name="Cube 22" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="36,71,31" max="43,73,24"/></capture>
+        <progress><cuboid min="36,71,31" max="43,73,24"/></progress>
+        <captured><cuboid min="36,71,31" max="43,73,24"/></captured>
+    </control-point>
+    <control-point name="Cube 23" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="43,71,24" max="50,73,17"/></capture>
+        <progress><cuboid min="43,71,24" max="50,73,17"/></progress>
+        <captured><cuboid min="43,71,24" max="50,73,17"/></captured>
+    </control-point>
+    <control-point name="Cube 24" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="50,71,17" max="57,73,10"/></capture>
+        <progress><cuboid min="50,71,17" max="57,73,10"/></progress>
+        <captured><cuboid min="50,71,17" max="57,7732,10"/></captured>
+    </control-point>
+    <control-point name="Cube 25" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="57,71,10" max="64,73,3"/></capture>
+        <progress><cuboid min="57,71,10" max="64,73,3"/></progress>
+        <captured><cuboid min="57,71,10" max="64,73,3"/></captured>
+    </control-point>
+    <control-point name="Cube 26" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="63,71,3" max="71,73,-4"/></capture>
+        <progress><cuboid min="63,71,3" max="71,73,-4"/></progress>
+        <captured><cuboid min="63,71,3" max="71,73,-4"/></captured>
+    </control-point>
+    <control-point name="Cube 27" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="71,71,-4" max="78,73,-11"/></capture>
+        <progress><cuboid min="71,71,-4" max="78,73,-11"/></progress>
+        <captured><cuboid min="71,71,-4" max="78,73,-11"/></captured>
+    </control-point>
+    <control-point name="Cube 28" capture-time="5s" points="1" neutral-state="false">
+        <capture><cuboid min="78,71,-11" max="85,73,-18"/></capture>
+        <progress><cuboid min="78,71,-11" max="85,73,-18"/></progress>
+        <captured><cuboid min="78,71,-11" max="85,73,-18"/></captured>
+    </control-point>
 </control-points>
 <tutorial>
     <stage title="King of the Hill">
