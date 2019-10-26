@@ -10,9 +10,9 @@
     <!-- BigMike2252 -->
 </authors>
 <broadcasts>
-  <tip after="30s">be strategic, find places to startle the enemy</tip>
-  <alert after="1m">Be carefull, enemies are allways lurking</alert>
-  <tip after="4m">Controlling Mid is the key to victory</tip>
+    <tip after="30s">be strategic, find places to startle the enemy</tip>
+    <alert after="1m">Be carefull, enemies are allways lurking</alert>
+    <tip after="4m">Controlling Mid is the key to victory</tip>
 </broadcasts>
 <timelock>on</timelock>
 <teams>
