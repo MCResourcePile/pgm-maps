@@ -19,7 +19,7 @@
 <tutorial>
     <stage title="Table Block">
         <message>
-            <line>`rThis map is a `a`lCapture the Wool `r(CTW) and a `a`lDestroy the Monument `r(DTW)` map.</line>
+            <line>`rThis map is a `a`lCapture the Wool `r(CTW) and a `a`lDestroy the Monument `r(DTM)` map.</line>
             <line>`rThe objective is to destroy the entrance (the monument) and return the wool to the player's spawn!</line>
         </message>
         <teleport>
@@ -50,7 +50,7 @@
             <line>`rYou shall use the portal to leave.</line>
         </message>
         <teleport>
-            <point yaw="0" pitch="45">-167.5,5,-434.5</point>
+            <point yaw="0" pitch="45">-167.5,4.5,-434.5</point>
         </teleport>
     </stage>
     <stage title="HourGlasses">
@@ -117,12 +117,12 @@
 </kits>
 <!--Filters-->
 <filters>
-    <filter id="only-blue">
+    <all id="only-blue">
         <team>blue-team</team>
-    </filter>
-    <filter id="only-yellow">
+    </all>
+    <all id="only-yellow">
         <team>yellow-team</team>
-    </filter>
+    </all>
     <deny id="no-safeties">
         <any>
             <material>wool</material>
@@ -132,10 +132,15 @@
         <not>
             <all>
                 <any>
-                    <block>iron block</block>
+                    <material>iron block</material>
                 </any>
             </all>
         </not>
+    </not>
+    <not id="deny-all">
+        <all>
+          <participating/>
+        </all>
     </not>
 </filters>
 <!--Regions-->
@@ -214,20 +219,29 @@
     <apply enter="only-blue" region="blue-iron" message="You may only enter your iron supplies room!"/>
     <apply enter="only-blue" region="bluespawn" message="You may not enter the enemy spawn!"/>
     <apply enter="only-blue" region="yellowclock" message="You may not enter here!"/>
-    <apply enter="only-blue" use="only-blue" region="bwoolrooms" message="You may not enter your wool rooms!"/>
     <apply enter="only-yellow" region="blueclock" message="You may not enter here!"/>
     <apply enter="only-yellow" region="yellow-iron" message="You may only enter your iron supplies room!"/>
     <apply enter="only-yellow" region="yellowspawn" message="You may not enter the enemy spawn!"/>
-    <apply enter="only-yellow" use="only-yellow" region="ywoolrooms" message="You may not enter your wool rooms!"/>
 </regions>
 <!--Portals-->
 <portals>
     <portal x="@-248" y="@16" z="@-433" filter="only-blue">
-        <region id="blue-port"/>
+        <!-- when a blue player jumps into their own silver and grey entrances -->
+        <!-- uses blue-port union, silver and gray -->
+        <region>
+            <cuboid min="-171,9,-428" max="-164,11,-435"/>
+            <cuboid min="-171,9,-388" max="-164,11,-381"/>
+        </region>
     </portal>
     <portal x="@-369" y="@16" z="@-385" filter="only-yellow">
-        <region id="yellow-port"/>
+        <!-- when a yellow player jumps into their own magenta and brown entrances -->
+        <!-- uses yellow-port union, magenta and brown -->
+        <region>
+            <cuboid min="-452,9,-389" max="-445,11,-382"/>
+            <cuboid min="-452,9,-429" max="-445,11,-436"/>
+        </region>
     </portal>
+    <!-- uses the named regions silver, gray, magenta and brown above, referenced regions don't work -->
     <portal x="@-169" y="@19" z="@-409">
         <region>
             <cuboid min="-169,2,-428" max="-167,4,-429"/><!--Silver-->
@@ -277,16 +291,16 @@
 <!--Monuments-->
 <destroyables materials="obsidian;gold block;coal block;glass" mode-changes="true" repairable="false" completion="30%">
     <destroyable name="Silver Entrance" owner="blue-team">
-        <region id="silver"/>
+        <region><cuboid min="-171,11,-428" max="-164,12,-435"/></region>
     </destroyable>
     <destroyable name="Gray Entrance" owner="blue-team">
-        <region id="gray"/>
+        <region><cuboid min="-171,11,-388" max="-164,12,-381"/></region>
     </destroyable>
     <destroyable name="Magenta Entrance" owner="yellow-team">
-        <region id="magenta"/>
+        <region><cuboid min="-452,11,-389" max="-445,12,-382"/></region>
     </destroyable>
     <destroyable name="Brown Entrance" owner="yellow-team">
-        <region id="brown"/>
+        <region><cuboid min="-452,11,-429" max="-445,12,-436"/></region>
     </destroyable>
 </destroyables>
 <modes>
