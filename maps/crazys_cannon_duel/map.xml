@@ -107,18 +107,18 @@
     <!-- Applicators -->
     <apply block="never" region="cant-build" message="You may not place or break blocks outside the build zone"/>
     <union name="drops">
-        <cuboid name="red-drop" min="182,51,174" max="181,51,223"/>
-        <cuboid name="blue-drop" min="175,51,217" max="175,51,167"/>
+        <cuboid id="red-drop" min="182,51,174" max="181,51,223"/>
+        <cuboid id="blue-drop" min="175,51,217" max="175,51,167"/>
     </union>
 </regions>
 <!-- Destroyables are impossible to break as they are in a deny-all region -->
 <!-- Used to make the glass starting platforms disappear and the bridge to appear -->
 <destroyables name="glass" show="false" required="false" mode-changes="true" materials="stained glass:15" region="map">
     <destroyable id="red-drop" owner="red">
-        <region name="red-drop"/>
+        <region id="red-drop"/>
     </destroyable>
     <destroyable id="blue-drop" owner="blue">
-        <region name="blue-drop"/>
+        <region id="blue-drop"/>
     </destroyable>
     <destroyable owner="red">
         <region id="bridge"/>
