@@ -113,7 +113,7 @@
 </regions>
 <!-- Destroyables are impossible to break as they are in a deny-all region -->
 <!-- Used to make the glass starting platforms disappear and the bridge to appear -->
-<destroyables name="glass" show="false" required="false" mode-changes="true" materials="stained glass:15" region="map">
+<destroyables name="glass" show="false" required="false" mode-changes="true" materials="stained glass:15">
     <destroyable id="red-drop" owner="red">
         <region id="red-drop"/>
     </destroyable>
