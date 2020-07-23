@@ -106,7 +106,7 @@
     <cuboid id="bridge" min="179,25,216" max="178,27,175"/>
     <!-- Applicators -->
     <apply block="never" region="cant-build" message="You may not place or break blocks outside the build zone"/>
-    <union name="drops">
+    <union id="drops">
         <cuboid id="red-drop" min="182,51,174" max="181,51,223"/>
         <cuboid id="blue-drop" min="175,51,217" max="175,51,167"/>
     </union>
