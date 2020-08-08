@@ -1,6 +1,8 @@
 # PGM Public Maps
 
-:european_castle: Publicly downloadable maps created for the open-source [Project Ares plugins](https://github.com/PGMDev/PGM).
+:european_castle: Publicly downloadable maps created for the open-source [PGM plugins](https://github.com/PGMDev/PGM).
+
+This repository has the purpose of providing new and classic PGM maps that have been designed and tested on the maintained [PGMDev](https://github.com/PGMDev/PGM) version of the classic Pvp Game Manager plugins from the former Overcast Network. Our other repositories of maps for PGM are mostly designed for older and now unmaintained versions of this plugin and may not work as intended.
 
 All maps can be downloaded from the [PGM Collection](https://mcresourcepile.github.io/maps/pgm) on our website.
 
@@ -19,6 +21,8 @@ Before adding a new map, ensure that you can answer **all** the following questi
 - Is the XML included and properly formatted (4 spaces, no tabs, etc)?
 - Is the `map.png` included, have the correct dimensions (290 x 246), and not distorted?
 - Has the map been correctly pruned?
+
+If a map has already been added, we will only accept alternate versions of it if it is different enough from the existing version. When making a pull request, please clearly outline what makes your version different.
 
 Notice
 -----------------
