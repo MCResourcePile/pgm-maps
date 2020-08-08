@@ -1,0 +1,143 @@
+<map proto="1.4.0">
+<name>Space Race: 1969</name>
+<version>1.0.1</version>
+<gamemode>ctf</gamemode>
+<objective>Capture the enemy flag as many times before time runs out</objective>
+<authors>
+    <author uuid="2958ea4c-3501-404e-88cc-12e8632f68cc"/> <!--  NixaniaXi  -->
+</authors>
+<teams>
+    <team id="red" color="dark red" max="5" max-overfill="5">Red</team>
+    <team id="blue" color="blue" max="5" max-overfill="5">Blue</team>
+</teams>
+<kits>
+    <kit id="main-kit">
+        <clear/>
+        <game-mode>adventure</game-mode>
+        <item slot="0" unbreakable="true" material="stone sword"/>
+        <item slot="1" unbreakable="true" material="bow"/>
+        <item slot="2" amount="1" material="golden apple"/>
+        <item slot="8" amount="16" material="arrow"/>
+        <chestplate unbreakable="true" material="chainmail chestplate"/>
+        <boots unbreakable="true" material="iron boots">
+            <enchantment level="2">protection projectile</enchantment>
+        </boots>
+        <effect duration="4" amplifier="10">resistance</effect>
+        <effect duration="4" amplifier="10">regeneration</effect>
+        <effect>night vision</effect>
+    </kit>
+    <kit id="blue-kit" parents="main-kit">
+        <helmet unbreakable="true" color="0066cc" material="leather helmet"/>
+        <leggings unbreakable="true" color="0066cc" material="leather leggings"/>
+    </kit>
+    <kit id="red-kit" parents="main-kit">
+        <helmet unbreakable="true" color="cd0000" material="leather helmet"/>
+        <leggings unbreakable="true" color="cd0000" material="leather leggings"/>
+    </kit>
+    <kit id="flag-carry" force="true">
+        <effect>slowness</effect>
+    </kit>
+    <kit id="flag-reset" force="true">
+        <effect duration="0" amplifier="10">slowness</effect>
+    </kit>
+    <kit id="observers">
+        <effect>night vision</effect>
+    </kit>
+</kits>
+<kill-reward>
+    <item material="golden apple"/>
+    <item amount="8" material="arrow"/>
+</kill-reward>
+<hunger>
+	<depletion>off</depletion>
+</hunger>
+<spawns>
+    <spawn team="red" kit="red-kit">
+        <regions yaw="-90">
+            <block>52.5,8,63.5</block>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue-kit">
+        <regions yaw="90">
+            <block>76.5,8,-12.5</block>
+        </regions>
+    </spawn>
+    <default kit="observers">
+        <regions yaw="0">
+            <point>64.5,18,25.5</point>
+        </regions>
+    </default>
+</spawns><!-- https://github.com/PGMDev/PGM/issues/246
+<respawns>
+    <respawn delay="3s" auto="true" blackout="true" filter="spawn-1"/>
+    <respawn delay="3.5s" auto="true" blackout="true" filter="spawn-2"/>
+    <respawn delay="4s" auto="true" blackout="true" filter="spawn-3"/>
+    <respawn delay="4.5s" auto="true" blackout="true" filter="spawn-4"/>
+    <respawn delay="5s" auto="true" blackout="true" filter="spawn-5"/>
+    <respawn delay="5.5s" auto="true" blackout="true" filter="spawn-6"/>
+</respawns> -->
+<respawn delay="3s" auto="true" blackout="true"/>
+<filters>
+    <team id="only-blue">blue</team>
+    <team id="only-red">red</team>
+    <time id="flag-respawns">0</time>
+    <not id="spawn-1">
+        <time>2m</time>
+    </not>
+    <all id="spawn-2">
+        <time>2m</time>
+        <not><time>4m</time></not>
+    </all>
+    <all id="spawn-3">
+        <time>4m</time>
+        <not><time>6m</time></not>
+    </all>
+    <all id="spawn-4">
+        <time>6m</time>
+        <not><time>8m</time></not>
+    </all>
+    <all id="spawn-5">
+        <time>8m</time>
+        <not><time>10m</time></not>
+    </all>
+    <all id="spawn-6">
+        <time>10m</time>
+    </all>
+</filters>
+<regions>
+    <cylinder id="blue-net" base="56.5,13,-2.5" radius="0.5" height="2" />
+    <cylinder id="red-net" base="72.5,13,53.5" radius="0.5" height="2" />
+    <apply block="never" region="everywhere"/>
+</regions>
+<flags flag-proximity-metric="closest player">
+    <flag id="red-flag" name="Red Flag" owner="red" pickup-kit="flag-carry" drop-kit="flag-reset">
+        <post pickup-filter="only-blue" recover-time="12s" respawn-time="10s">72.5,13,53.5</post>
+    </flag>
+    <flag id="blue-flag" name="Blue Flag" owner="blue" pickup-kit="flag-carry" drop-kit="flag-reset">
+        <post pickup-filter="only-red" recover-time="12s" respawn-time="10s">56.5,13,-2.5</post>
+    </flag>
+    <flags points="1">
+        <net region="red-net" flag="blue-flag" respawn-filter="flag-respawns"/>
+        <net region="blue-net" flag="red-flag" respawn-filter="flag-respawns"/>
+    </flags>
+</flags>
+<score>
+    <limit>-1</limit>
+</score>
+<time>12m</time>
+<toolrepair>
+	<tool>stone sword</tool>
+	<tool>bow</tool>
+</toolrepair>
+<itemkeep>
+    <item>arrow</item>
+    <item>golden apple</item>
+</itemkeep>
+<itemremove>
+    <item>leather helmet</item>
+    <item>chainmail chestplate</item>
+    <item>leather leggings</item>
+    <item>iron boots</item>
+</itemremove>
+<timelock>on</timelock>
+</map>
