@@ -1,6 +1,6 @@
 # PGM Public Maps
 
-:european_castle: Publicly downloadable maps created for the open-source [Project Ares plugins](https://github.com/OvercastNetwork/ProjectAres).
+:european_castle: Publicly downloadable maps created for the open-source [Project Ares plugins](https://github.com/PGMDev/PGM).
 
 All maps can be downloaded from the [PGM Collection](https://mcresourcepile.github.io/maps/pgm) on our website.
 
