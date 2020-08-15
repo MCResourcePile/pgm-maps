@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<map proto="1.0.0">
+<name>Temple Run</name>
+<version>1.2.6</version>
+<objective>Destroy the enemy core while protecting your own core.</objective>
+<authors>
+    <author uuid="8f450ecb-184a-4fdd-9f17-bf1da547ab64"/> <!-- Chicago_T3d -->
+    <author uuid="3881e2f3-b393-4435-80a1-ff4c87fb4236"/> <!-- MrArchy -->
+</authors>
+<contributors>
+    <contributor contribution="Freelion Statue">boozha</contributor>
+    <contributor contribution="Morale Support">Freelion Alliance</contributor>
+</contributors>
+<teams>
+    <team color="blue" max="64">Blue</team>
+    <team color="dark red" max="64">Red</team>
+</teams>
+<maxbuildheight>113</maxbuildheight>
+<kits>
+    <kit name="spawn">
+        <item slot="0">iron sword</item>
+        <item slot="1">bow</item>
+        <item slot="2" enchantment="unbreaking:3">diamond pickaxe</item>
+        <item slot="3" enchantment="efficiency:2;unbreaking:3">iron axe</item>
+        <item slot="4" amount="32">grilled pork</item>
+        <item slot="5" amount="64" damage="3">log</item>
+        <item slot="6" amount="64" damage="3">leaves</item>
+        <item slot="28" amount="64">arrow</item>
+        <potion amplifier="5" duration="10">damage resistance</potion>
+        <potion amplifier="1" duration="8">strength</potion>
+    </kit>
+    <kit name="red-kit" parents="spawn">
+        <item slot="5" amount="64" damage="14">wool</item>
+    </kit>
+    <kit name="blue-kit" parents="spawn">
+        <item slot="5" amount="64" damage="11">wool</item>
+    </kit>
+</kits>
+<spawns>
+    <default yaw="0">
+        <cylinder base="5,88,147.5" radius="2" height="0"/>
+    </default>
+    <spawn team="red" kit="spawn" yaw="90">
+        <cylinder base="166,79,48" radius="4" height="0"/>
+    </spawn>
+    <spawn team="blue" kit="spawn" yaw="270">
+        <cylinder base="-157,79,48" radius="4" height="0"/>
+    </spawn>
+</spawns>
+<regions>
+    <union name="blue-storage">
+        <cuboid name="blue-storage-main" min="-144,85,61" max="-170,77,35"/>
+        <cuboid name="blue-hidden1" min="-175,83,53" max="-185,79,43"/>
+    </union>
+    <union name="red-storage">
+        <cuboid name="red-storage-main" min="153,85,35" max="179,78,61"/>
+        <cuboid name="red-hidden1" min="184,83,43" max="194,79,53"/>
+    </union>
+    <apply block="deny-blocks" message="You may not break or place blocks in or near the pyramid rooms!">
+        <region name="blue-storage"/>
+        <region name="red-storage"/>
+    </apply>
+
+    <apply block="deny-all" message="You may not build off of the map!">
+        <negative name="playable-inverse">
+            <rectangle min="211,1" max="-202,95"/>
+        </negative>
+    </apply>
+</regions>
+<cores material="obsidian" leak="3">
+    <core team="blue">
+        <cuboid min="-162,111,46" max="-158,107,50"/>
+    </core>
+    <core team="red">
+        <cuboid min="171,111,50" max="167,107,46"/>
+    </core>
+</cores>
+<killreward>
+    <item amount="16">arrow</item>
+</killreward>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>bow</tool>
+    <tool>diamond pickaxe</tool>
+    <tool>iron axe</tool>
+</toolrepair>
+<itemremove>
+    <item>obsidian</item>
+    <item>log</item>
+    <item>arrow</item>
+    <item>grilled pork</item>
+    <item>leaves</item>
+    <item>wood</item>
+</itemremove>
+</map>
+

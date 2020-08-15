@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<map proto="1.0.0">
+<name>Spaceship Battles II</name>
+<version>1.1.10</version>
+<objective>Leak lava from the enemy's obsidian core and destroy the enemy's Comm Tower made of coal ore.</objective>
+<authors>
+    <author uuid="73711d58-d786-4007-8c95-c93b1311de1a"/> <!-- Oversoul96 -->
+    <author uuid="c97373ef-4582-4350-8993-8a78f2775c29"/> <!-- Eclipsen -->
+</authors>
+<teams>
+    <team color="blue" max="50">Blue</team>
+    <team color="dark red" max="50">Red</team>
+</teams>
+<kits>
+    <kit name="spawn">
+        <item slot="0">iron sword</item>
+        <item slot="1">iron pickaxe</item>
+        <item slot="2" amount="8">wood</item>
+        <item slot="3" amount="8">bread</item>
+        <chestplate>iron chestplate</chestplate>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="blue" kit="spawn" yaw="90">
+        <cuboid min="208.5,97,360.5" max="214.5,97,362.5"/>
+    </spawn>
+    <spawn team="red" kit="spawn" yaw="90">
+        <cuboid min="208.5,97,193.5" max="214.5,97,195.5"/>
+    </spawn>
+    <default yaw="270">
+        <cylinder base="280,68,275" radius="4" height="0"/>
+    </default>
+</spawns>
+<playable>
+    <cuboid min="9,-oo,121" max="266,93,429"/>
+</playable>
+<regions>
+    <apply block="deny-all" message="You may not cover the spawn pools.">
+        <cuboid name="blue-spawn-pool" min="201,17,359" max="206,oo,364"/>
+        <cuboid name="red-spawn-pool" min="201,17,192" max="206,oo,197"/>
+    </apply>
+</regions>
+<cores material="obsidian" leak="-1">
+    <core team="blue">
+        <cuboid min="118,20,358" max="127,27,365"/>
+    </core>
+    <core team="red">
+        <cuboid min="118,20,191" max="127,27,198"/>
+    </core>
+</cores>
+<destroyables name="Comm Tower" materials="coal ore">
+    <destroyable owner="blue">
+        <cuboid min="185,52,360" max="188,60,363"/>
+    </destroyable>
+    <destroyable owner="red">
+        <cuboid min="185,52,193" max="188,60,196"/>
+    </destroyable>
+</destroyables>
+<maxbuildheight>61</maxbuildheight>
+<crafting>
+    <disable>boat</disable>
+</crafting>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>iron pickaxe</tool>
+</toolrepair>
+<itemremove>
+    <item>obsidian</item>
+    <item>coal</item>
+    <item>iron chestplate</item>
+</itemremove>
+</map>
