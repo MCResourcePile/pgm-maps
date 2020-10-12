@@ -1,0 +1,261 @@
+<map proto="1.4.0">
+<name>Mega Cacti Terror</name>
+<version>1.0.5</version>
+<objective>Be the last man standing!</objective>
+<authors>
+    <author uuid="f690a591-348b-482e-a18d-7779d0c0a28c"/>
+</authors>
+<players min="2" max="64">Players</players>
+<blitz/>
+<time>8m</time>
+<kits>
+    <kit id="spawn-kit" force="true">
+        <health>1</health>
+        <item slot="0" amount="16" material="cactus"/>
+        <item slot="1" unbreakable="true" material="fishing rod"/>
+        <effect duration="oo" amplifier="-4">health boost</effect>
+        <effect duration="oo" amplifier="1">slow digging</effect>
+        <effect duration="oo" amplifier="20">weakness</effect>
+        <effect duration="3" amplifier="20">damage resistance</effect>
+    </kit> 
+</kits>
+<gamerules>
+    <naturalRegeneration>false</naturalRegeneration>
+</gamerules>
+<hunger>
+    <depletion>off</depletion>
+</hunger>
+<spawns>
+    <spawn kit="spawn-kit">
+        <region angle="-497.5,14,325.5">
+            <cylinder base="-497.5,14,325.5" radius="40" height="0"/>
+        </region>
+    </spawn>
+    <default>
+        <region angle="-497.5,14,325.5">
+            <cylinder base="-497.5,14,325.5" radius="40" height="0"/>
+        </region>
+    </default>
+</spawns>
+<filters>
+    <any id="allowed-interactions">
+        <all>
+            <cause>world</cause>
+            <material>gravel</material>
+        </all>
+        <all>
+            <cause>explosion</cause>
+            <material>cactus</material>
+        </all>
+        <all>
+            <cause>player</cause>
+            <any>
+                <material>cactus</material>
+                <material>tnt</material>
+            </any>
+        </all>
+    </any>
+    <not id="no-cactus">
+        <material>cactus</material>
+    </not>
+    <not id="trigger-arena">
+        <time>3s</time>
+    </not>
+</filters>
+<regions>
+    <cylinder id="spawner-spawn" base="-497.5,18,325.5" radius="2" height="1"/>
+    <cylinder id="spawner-check" base="-497.5,12,325.5" radius="35" height="5"/>
+    <sphere id="r-1" origin="-497.5,13,325.5" radius="1"/>
+    <complement id="r-2"><sphere  id="s-2"  origin="-497.5,13,325.5" radius="2"/><region  id="r-1"/></complement>
+    <complement id="r-3"><sphere  id="s-3"  origin="-497.5,13,325.5" radius="3"/><region  id="s-2"/></complement>
+    <complement id="r-4"><sphere  id="s-4"  origin="-497.5,13,325.5" radius="4"/><region  id="s-3"/></complement>
+    <complement id="r-5"><sphere  id="s-5"  origin="-497.5,13,325.5" radius="5"/><region  id="s-4"/></complement>
+    <complement id="r-6"><sphere  id="s-6"  origin="-497.5,13,325.5" radius="6"/><region  id="s-5"/></complement>
+    <complement id="r-7"><sphere  id="s-7"  origin="-497.5,13,325.5" radius="7"/><region  id="s-6"/></complement>
+    <complement id="r-8"><sphere  id="s-8"  origin="-497.5,13,325.5" radius="8"/><region  id="s-7"/></complement>
+    <complement id="r-9"><sphere  id="s-9"  origin="-497.5,13,325.5" radius="9"/><region  id="s-8"/></complement>
+    <complement id="r-10"><sphere id="s-10" origin="-497.5,13,325.5" radius="10"/><region id="s-9"/></complement>
+    <complement id="r-11"><sphere id="s-11" origin="-497.5,13,325.5" radius="11"/><region id="s-10"/></complement>
+    <complement id="r-12"><sphere id="s-12" origin="-497.5,13,325.5" radius="12"/><region id="s-11"/></complement>
+    <complement id="r-13"><sphere id="s-13" origin="-497.5,13,325.5" radius="13"/><region id="s-12"/></complement>
+    <complement id="r-14"><sphere id="s-14" origin="-497.5,13,325.5" radius="14"/><region id="s-13"/></complement>
+    <complement id="r-15"><sphere id="s-15" origin="-497.5,13,325.5" radius="15"/><region id="s-14"/></complement>
+    <complement id="r-16"><sphere id="s-16" origin="-497.5,13,325.5" radius="16"/><region id="s-15"/></complement>
+    <complement id="r-17"><sphere id="s-17" origin="-497.5,13,325.5" radius="17"/><region id="s-16"/></complement>
+    <complement id="r-18"><sphere id="s-18" origin="-497.5,13,325.5" radius="18"/><region id="s-17"/></complement>
+    <complement id="r-19"><sphere id="s-19" origin="-497.5,13,325.5" radius="19"/><region id="s-18"/></complement>
+    <complement id="r-20"><sphere id="s-20" origin="-497.5,13,325.5" radius="20"/><region id="s-19"/></complement>
+    <complement id="r-21"><sphere id="s-21" origin="-497.5,13,325.5" radius="21"/><region id="s-20"/></complement>
+    <complement id="r-22"><sphere id="s-22" origin="-497.5,13,325.5" radius="22"/><region id="s-21"/></complement>
+    <complement id="r-23"><sphere id="s-23" origin="-497.5,13,325.5" radius="23"/><region id="s-22"/></complement>
+    <complement id="r-24"><sphere id="s-24" origin="-497.5,13,325.5" radius="24"/><region id="s-23"/></complement>
+    <complement id="r-25"><sphere id="s-25" origin="-497.5,13,325.5" radius="25"/><region id="s-24"/></complement>
+    <complement id="r-26"><sphere id="s-26" origin="-497.5,13,325.5" radius="26"/><region id="s-25"/></complement>
+    <complement id="r-27"><sphere id="s-27" origin="-497.5,13,325.5" radius="27"/><region id="s-26"/></complement>
+    <complement id="r-28"><sphere id="s-28" origin="-497.5,13,325.5" radius="28"/><region id="s-27"/></complement>
+    <complement id="r-29"><sphere id="s-29" origin="-497.5,13,325.5" radius="29"/><region id="s-28"/></complement>
+    <complement id="r-30"><sphere id="s-30" origin="-497.5,13,325.5" radius="30"/><region id="s-29"/></complement>
+    <complement id="r-31"><sphere id="s-31" origin="-497.5,13,325.5" radius="31"/><region id="s-30"/></complement>
+    <complement id="r-32"><sphere id="s-32" origin="-497.5,13,325.5" radius="32"/><region id="s-31"/></complement>
+    <complement id="r-33"><sphere id="s-33" origin="-497.5,13,325.5" radius="33"/><region id="s-32"/></complement>
+    <complement id="r-34"><sphere id="s-34" origin="-497.5,13,325.5" radius="34"/><region id="s-33"/></complement>
+    <complement id="r-35"><sphere id="s-35" origin="-497.5,13,325.5" radius="35"/><region id="s-34"/></complement>
+    <complement id="r-36"><sphere id="s-36" origin="-497.5,13,325.5" radius="36"/><region id="s-35"/></complement>
+    <complement id="r-37"><sphere id="s-37" origin="-497.5,13,325.5" radius="37"/><region id="s-36"/></complement>
+    <complement id="r-38"><sphere id="s-38" origin="-497.5,13,325.5" radius="38"/><region id="s-37"/></complement>
+    <complement id="r-39"><sphere id="s-39" origin="-497.5,13,325.5" radius="39"/><region id="s-38"/></complement>
+    <complement id="r-40"><sphere id="s-40" origin="-497.5,13,325.5" radius="40"/><region id="s-39"/></complement>
+    <complement id="r-41"><sphere id="s-41" origin="-497.5,13,325.5" radius="41"/><region id="s-40"/></complement>
+    <complement id="r-42"><sphere id="s-42" origin="-497.5,13,325.5" radius="42"/><region id="s-41"/></complement>
+    <complement id="r-43"><sphere id="s-43" origin="-497.5,13,325.5" radius="43"/><region id="s-42"/></complement>
+    <complement id="r-44"><sphere id="s-44" origin="-497.5,13,325.5" radius="44"/><region id="s-43"/></complement>
+    <complement id="r-45"><sphere id="s-45" origin="-497.5,13,325.5" radius="45"/><region id="s-44"/></complement>
+    <complement id="r-46"><sphere id="s-46" origin="-497.5,13,325.5" radius="46"/><region id="s-45"/></complement>
+    <complement id="r-47"><sphere id="s-47" origin="-497.5,13,325.5" radius="47"/><region id="s-46"/></complement>
+    <complement id="r-48"><sphere id="s-48" origin="-497.5,13,325.5" radius="48"/><region id="s-47"/></complement>
+    <point id="trigger-n">-497.5,12,278.5</point>
+    <point id="trigger-s">-497.5,12,372.5</point>
+    <point id="trigger-e">-450.5,12,325.5</point>
+    <point id="trigger-w">-544.5,12,325.5</point>
+    <point id="trigger-nw">-530.5,12,292.5</point>
+    <point id="trigger-ne">-464.5,12,292.5</point>
+    <point id="trigger-se">-464.5,12,358.5</point>
+    <point id="trigger-sw">-530.5,12,358.5</point>
+    <above id="playable-region" y="10"/>
+    <below id="lava-region" y="10"/>
+    <apply region="playable-region" block="allowed-interactions"/>
+    <apply region="lava-region" block="never"/>
+</regions>
+<falling-blocks>
+    <rule delay="1">
+        <filter>
+            <any>
+                <material>stone:6</material>
+            </any>
+        </filter>
+    </rule>
+    <rule delay="80">
+        <filter>
+            <all>
+                <any>
+                    <material>sand</material>
+                    <material>bedrock</material>
+                    <material>cactus</material>
+                </any>
+                <any>
+                    <all><region id="r-48"/><time>0s</time></all>
+                    <all><region id="r-47"/><time>0s</time></all>
+                    <all><region id="r-46"/><time>0s</time></all>
+                    <all><region id="r-45"/><time>4s</time></all>
+                    <all><region id="r-44"/><time>8s</time></all>
+                    <all><region id="r-43"/><time>12s</time></all>
+                    <all><region id="r-42"/><time>16s</time></all>
+                    <all><region id="r-41"/><time>20s</time></all>
+                    <all><region id="r-40"/><time>24s</time></all>
+                    <all><region id="r-39"/><time>28s</time></all>
+                    <all><region id="r-38"/><time>32s</time></all>
+                    <all><region id="r-37"/><time>36s</time></all>
+                    <all><region id="r-36"/><time>40s</time></all>
+                    <all><region id="r-35"/><time>44s</time></all>
+                    <all><region id="r-34"/><time>48s</time></all>
+                    <all><region id="r-33"/><time>52s</time></all>
+                    <all><region id="r-32"/><time>56s</time></all>
+                    <all><region id="r-31"/><time>60s</time></all>
+                    <all><region id="r-30"/><time>64s</time></all>
+                    <all><region id="r-29"/><time>68s</time></all>
+                    <all><region id="r-28"/><time>72s</time></all>
+                    <all><region id="r-27"/><time>76s</time></all>
+                    <all><region id="r-26"/><time>80s</time></all>
+                    <all><region id="r-25"/><time>84s</time></all>
+                </any>
+            </all>
+        </filter>
+    </rule>
+    <rule delay="40">
+        <filter>
+            <all>
+                <any>
+                    <material>sand</material>
+                    <material>bedrock</material>
+                    <material>cactus</material>
+                </any>
+                <any>
+                    <all><region id="r-24"/><time>86s</time></all>
+                    <all><region id="r-23"/><time>88s</time></all>
+                    <all><region id="r-22"/><time>90s</time></all>
+                    <all><region id="r-21"/><time>92s</time></all>
+                    <all><region id="r-20"/><time>94s</time></all>
+                    <all><region id="r-19"/><time>96s</time></all>
+                    <all><region id="r-18"/><time>98s</time></all>
+                    <all><region id="r-17"/><time>100s</time></all>
+                    <all><region id="r-16"/><time>104s</time></all>
+                    <all><region id="r-15"/><time>108s</time></all>
+                    <all><region id="r-14"/><time>110s</time></all>
+                    <all><region id="r-13"/><time>112s</time></all>
+                    <all><region id="r-12"/><time>114s</time></all>
+                    <all><region id="r-11"/><time>116s</time></all>
+                    <all><region id="r-10"/><time>118s</time></all>
+                    <all><region id="r-9"/><time>120s</time></all>
+                    <all><region id="r-8"/><time>122s</time></all>
+                    <all><region id="r-7"/><time>124s</time></all>
+                    <all><region id="r-6"/><time>126s</time></all>
+                    <all><region id="r-5"/><time>128s</time></all>
+                    <all><region id="r-4"/><time>130s</time></all>
+                    <all><region id="r-3"/><time>132s</time></all>
+                    <all><region id="r-2"/><time>134s</time></all>
+                    <all><region id="r-1"/><time>136s</time></all>
+                </any>
+            </all>
+        </filter>
+    </rule>
+</falling-blocks>
+<spawners>
+    <spawner spawn-region="spawner-spawn" player-region="spawner-check" delay="12s">
+        <item material="cactus"/>
+    </spawner>
+    <spawner spawn-region="spawner-spawn" player-region="spawner-check" delay="24s">
+        <item material="snow ball"/>
+    </spawner>
+    <spawner spawn-region="trigger-n" player-region="playable-region" delay="2s" filter="trigger-arena">
+        <item material="egg"/>
+    </spawner>
+    <spawner spawn-region="trigger-s" player-region="playable-region" delay="2s" filter="trigger-arena">
+        <item material="egg"/>
+    </spawner>
+    <spawner spawn-region="trigger-e" player-region="playable-region" delay="2s" filter="trigger-arena">
+        <item material="egg"/>
+    </spawner>
+    <spawner spawn-region="trigger-w" player-region="playable-region" delay="2s" filter="trigger-arena">
+        <item material="egg"/>
+    </spawner>
+    <spawner spawn-region="trigger-nw" player-region="playable-region" delay="1s" filter="trigger-arena">
+        <item material="egg"/>
+    </spawner>
+    <spawner spawn-region="trigger-ne" player-region="playable-region" delay="1s" filter="trigger-arena">
+        <item material="egg"/>
+    </spawner>
+    <spawner spawn-region="trigger-se" player-region="playable-region" delay="1s" filter="trigger-arena">
+        <item material="egg"/>
+    </spawner>
+    <spawner spawn-region="trigger-sw" player-region="playable-region" delay="1s" filter="trigger-arena">
+        <item material="egg"/>
+    </spawner>
+</spawners>
+<kill-rewards>
+    <reward>
+        <item material="cactus" amount="4"/>
+        <item material="tnt"/>
+    </reward>
+</kill-rewards>
+<tnt>
+    <fuse>2s</fuse>
+    <power>2</power>
+    <blockdamage>true</blockdamage>
+    <instantignite>true</instantignite>
+</tnt>
+<itemkeep>
+    <item>cactus</item>
+    <item>fishing rod</item>
+    <item>snow ball</item>
+</itemkeep>
+</map>
