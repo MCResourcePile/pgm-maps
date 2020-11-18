@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <map proto="1.4.0" game="Progress">
 <name>The Dropper</name>
-<version>1.0.1</version>
+<version>1.0.2</version>
 <objective>Drop down each stage and be the first to finish!</objective>
 <authors>
     <author>Bigre</author>
@@ -52,14 +52,14 @@
         <effect duration="1">night vision</effect>
         <effect duration="1">speed</effect>
     </kit>
+    <kit id="regen">
+        <effect duration="1s" amplifier="10">regeneration</effect>
+    </kit>
 </kits>
 <regions>
-    <union id="deny-use">
-        <point>-636,253,-737</point>
-    </union>
-    <apply use="deny-lever" block="deny-lever" region="deny-use" message="Sorry! You can't use this :("/>
     <apply block="not-players"/>
     <!-- Special rules -->
+    <apply kit="regen" region="end-stage-6"/>
     <cuboid id="stage-9-kit" min="-487,251,-626" max="-483,255,-630"/> <!-- disable gear chest at stage 9? gaps could be an issue -->
     <apply kit="night-vision" region="stage-9-kit"/>
     <apply kit="remove-night-vision" region="end-stage-9"/>
@@ -104,9 +104,6 @@
     <not id="not-players">
         <cause>player</cause>
     </not>
-    <not id="deny-lever">
-        <material>lever</material>
-    </not>
     <score id="you-just-started">0</score>
     <score id="should-spawn-at-stage-2-now">1</score>
     <score id="should-spawn-at-stage-3-now">2</score>
@@ -140,7 +137,7 @@
     <portal destination="stage-14" region="end-stage-13" yaw="@90"/>
     <portal destination="stage-15" region="end-stage-14" yaw="@-90"/>
 </portals>
-<score> <!-- Maybe add a 16th score, where getting the 15th triggers a 30s capture of a hill to give the final point? -->
+<score> <!-- Getting the 15th triggers a 30s capture of a hill to give the final point -->
     <limit>16</limit>
     <box points="1" region="end-stage-1"/>
     <box points="1" region="end-stage-2"/>
@@ -188,4 +185,5 @@
     <item>bed</item>
     <item>boat</item>
 </itemremove>
+<timelock>on</timelock>
 </map>
