@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <map proto="1.4.0" game="Progress">
 <name>The Dropper</name>
-<version>1.0.2</version>
+<version>1.0.3</version>
 <objective>Drop down each stage and be the first to finish!</objective>
 <authors>
     <author>Bigre</author>
@@ -60,10 +60,10 @@
     <apply block="not-players"/>
     <!-- Special rules -->
     <apply kit="regen" region="end-stage-6"/>
-    <cuboid id="stage-9-kit" min="-487,251,-626" max="-483,255,-630"/> <!-- disable gear chest at stage 9? gaps could be an issue -->
+    <cuboid id="stage-9-kit" min="-487,251,-626" max="-483,255,-630"/>
     <apply kit="night-vision" region="stage-9-kit"/>
     <apply kit="remove-night-vision" region="end-stage-9"/>
-    <cuboid id="stage-13-kit" min="-298,241,-665" max="-301,245,-660"/> <!-- disable gear chest (and chest above sand staircase, has gaps (fly around there's more chests too)), instant health pots -->
+    <cuboid id="stage-13-kit" min="-298,241,-665" max="-301,245,-660"/>
     <apply kit="night-vision-speed" region="stage-13-kit"/>
     <apply kit="remove-night-vision-speed" region="end-stage-13"/>
     <!-- New stage destinations -->
@@ -80,7 +80,7 @@
     <point id="stage-12">-364,252,-636</point>
     <point id="stage-13">-300,242,-673</point>
     <point id="stage-14">-239,252,-498</point>
-    <point id="stage-15">141,252,32</point> <!-- Due to technical limitations the actual stage 15 was skipped, so this stage is listed as stage 16 on the map -->
+    <point id="stage-15">-104.5,252,-431.5</point> <!-- Due to technical limitations the actual stage 15 was skipped, so this stage is listed as stage 16 on the map -->
     <!-- Portals/score boxes at end of stage -->
     <cuboid id="end-stage-1" min="-625,1,-729" max="-626,5,-732"/>
     <cuboid id="end-stage-2" min="-605,1,-714" max="-602,5,-715"/>
@@ -96,7 +96,7 @@
     <cuboid id="end-stage-12" min="-364,0,-715" max="-357,4,-718"/>
     <cuboid id="end-stage-13" min="-170,156,-564" max="-175,160,-563"/>
     <cuboid id="end-stage-14" min="-239,3,-515" max="-241,6,-514"/>
-    <cuboid id="end-stage-15" min="198,0,124" max="279,25,-80"/>
+    <cuboid id="end-stage-15" min="-41,0,-341" max="38,25,-543"/>
     <!-- Prevent players from re-entering course once complete -->
     <apply leave="never" region="end-stage-15" message="You've won! A 30s countdown began as soon as the first player completed. Stick around until then!"/>
 </regions>
