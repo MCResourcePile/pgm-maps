@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <map proto="1.4.0" game="Progress">
 <name>The Dropper</name>
-<version>1.0.4</version>
+<version>1.0.6</version>
 <objective>Drop down each stage and be the first to finish!</objective>
 <authors>
     <author>Bigre</author>
@@ -64,10 +64,14 @@
     <!-- Special rules -->
     <cuboid id="arch" min="-652,251,-747" max="-651,254,-744"/>
     <apply kit="invis" region="arch"/>
+    <cuboid id="roof-3" min="-599,254,-668" max="-565,255,-702"/>
+    <apply enter="never" region="roof-3"/>
     <apply kit="regen" region="end-stage-6"/>
     <cuboid id="stage-9-kit" min="-487,251,-626" max="-483,255,-630"/>
     <apply kit="night-vision" region="stage-9-kit"/>
     <apply kit="remove-night-vision" region="end-stage-9"/>
+    <cuboid id="tunnel-to-skeleton" min="-297,241,-715" max="-302,246,-720"/>
+    <apply enter="never" region="tunnel-to-skeleton" message="Nice try Digitalight"/>
     <cuboid id="stage-13-kit" min="-298,241,-665" max="-301,245,-660"/>
     <apply kit="night-vision-speed" region="stage-13-kit"/>
     <apply kit="remove-night-vision-speed" region="end-stage-13"/>
