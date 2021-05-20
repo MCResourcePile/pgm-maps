@@ -1,6 +1,6 @@
 <map proto="1.4.0">
 <name>Mega Cacti Terror</name>
-<version>1.1.0</version>
+<version>1.1.1</version>
 <objective>Be the last man standing!</objective>
 <authors>
     <author uuid="f690a591-348b-482e-a18d-7779d0c0a28c"/>
@@ -192,10 +192,10 @@
     <spawner spawn-region="center"    player-region="playable-region" delay="15s"><item material="snow ball"/></spawner>
 </spawners>
 <kill-rewards>
-    <reward>
+    <kill-reward>
         <item material="cactus" amount="4"/>
         <item material="tnt"/>
-    </reward>
+    </kill-reward>
 </kill-rewards>
 <tnt>
     <fuse>2s</fuse>
