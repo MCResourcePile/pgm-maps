@@ -1,0 +1,140 @@
+<map proto="1.4.0">
+<name>Kit Testing</name>
+<version>1.1.1</version>
+<authors>
+    <author uuid="b1521072-6993-4fe4-ae60-dbeeb7dc0cfa"/> <!--Antnecb-->
+</authors>
+<objective>Testing for damage</objective>
+<teams>
+    <team id="red" color="dark red" max="1" max-overfill="1">Red</team>
+    <team id="blue" color="blue" max="1" max-overfill="1">Blue</team>
+</teams>
+<spawns>
+    <spawn team="red" kit="spawn" safe="false">
+        <regions yaw="180"><region id="red-spawn"/></regions>
+    </spawn>
+    <spawn team="blue" kit="spawn" safe="false">
+        <regions yaw="0"><region id="blue-spawn"/></regions>
+    </spawn>
+    <default>
+        <regions yaw="90">
+            <point id="obs">0.5,2.5,0.5</point>
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit id="saturation">
+        <effect>saturation</effect>
+    </kit>
+    <kit id="spawn" parents="saturation">
+        <item slot="6" unbreakable="true" enchantment="efficiency:1">diamond_pickaxe</item>
+        <item slot="7" unbreakable="true" enchantment="efficiency:1">diamond_axe</item>
+        <item slot="8" unbreakable="true" enchantment="infinity:1;punch:2" name="Yeeter">bow</item>
+        <item slot="35">arrow</item>
+    </kit>
+    <!--Basic Potion Kits-->
+    <kit id="regen">
+        <effect duration="1">instant_health</effect>
+    </kit>
+    <kit id="speed">
+        <effect duration="oo" amplifier="5">speed</effect>
+    </kit>
+    <kit id="clear" force="true">
+        <effect duration="1">instant_health</effect>
+        <effect duration="1">speed</effect>
+        <effect duration="1">strength</effect>
+        <effect duration="1">resistance</effect>
+    </kit>
+    <!--Resistance Kits-->
+    <kit id="res1"><effect duration="oo" amplifier="1">resistance</effect></kit>
+    <kit id="res2"><effect duration="oo" amplifier="2">resistance</effect></kit>
+    <kit id="res3"><effect duration="oo" amplifier="3">resistance</effect></kit>
+    <kit id="res4"><effect duration="oo" amplifier="4">resistance</effect></kit>
+    <kit id="res5"><effect duration="oo" amplifier="5">resistance</effect></kit>
+    <!--Strength Kits-->
+    <kit id="str1"><effect duration="oo" amplifier="1">strength</effect></kit>
+    <kit id="str2"><effect duration="oo" amplifier="2">strength</effect></kit>
+    <kit id="str3"><effect duration="oo" amplifier="3">strength</effect></kit>
+    <kit id="str4"><effect duration="oo" amplifier="4">strength</effect></kit>
+    <kit id="str5"><effect duration="oo" amplifier="5">strength</effect></kit>
+</kits>
+<filters>
+    <not id="deny-explosion-damage">
+        <all>
+            <cause>explosion</cause>
+            <any>
+                <material>stained_clay</material>
+                <material>stained_glass_pane</material>
+                <material>chest</material>
+                <material>trapped_chest</material>
+                <material>step</material>
+                <material>gold_block</material>
+                <material>wool</material>
+                <material>item_frame</material>
+                <material>sign_post</material>
+                <material>wall_sign</material>
+            </any>
+        </all>
+    </not>
+</filters>
+<regions>
+    <point id="red-spawn">0.5,2,8.5</point>
+    <point id="blue-spawn">0.5,2,-7.5</point>
+    <union id="regen-pads">
+        <rectangle id="regen-pad-1" min="-9.5,5.5" max="-7.5,7.5"/>
+        <rectangle id="regen-pad-2" min="10.5,-37.5" max="12.5,-8.5"/>
+        <rectangle id="regen-pad-3" min="10.5,9.5" max="12.5,38.5"/>
+        <rectangle id="regen-pad-4" min="34.5,-37.5" max="36.5,38.5"/>
+        <rectangle id="endzone" min="-3,14" max="4,16"/>
+    </union>
+    <rectangle id="speed-pad" min="-9.5,-6.5" max="-7.5,-4.5"/>
+    <rectangle id="clear-pad" min="-21.5,-0.5" max="-19.5,1.5"/>
+    <rectangle id="everything" min="-oo,-oo" max="oo,oo"/>
+    <union id="chests">
+        <cuboid id="blue-chests" min="-2.5,0,-8.5" max="-1.5,1,-6.5"/>
+        <cuboid id="red-chests" min="-2.5,0,6.5" max="-1.5,1,10.5"/>
+        <cuboid id="tnt-chests-1" min="6.5,0,-2.5" max="13.5,2,-1.5"/>
+        <cuboid id="tnt-chests-2" min="6.5,0,2.5" max="13.5,2,3.5"/>
+    </union>
+    <negative id="not-tnt-zone">
+        <rectangle id="tnt-zone" min="14.5,-40.5" max="32.5,41.5"/>
+    </negative>
+    <!--Resistance Regions-->
+    <rectangle id="res1-pad" min="-9.5,-14.5" max="-7.5,-12.5"/>
+    <rectangle id="res2-pad" min="-9.5,-20.5" max="-7.5,-18.5"/>
+    <rectangle id="res3-pad" min="-9.5,-26.5" max="-7.5,-24.5"/>
+    <rectangle id="res4-pad" min="-9.5,-32.5" max="-7.5,-30.5"/>
+    <rectangle id="res5-pad" min="-9.5,-38.5" max="-7.5,-36.5"/>
+    <!--Strength Regions-->
+    <rectangle id="str1-pad" min="-9.5,13.5" max="-7.5,15.5"/>
+    <rectangle id="str2-pad" min="-9.5,19.5" max="-7.5,21.5"/>
+    <rectangle id="str3-pad" min="-9.5,25.5" max="-7.5,27.5"/>
+    <rectangle id="str4-pad" min="-9.5,31.5" max="-7.5,33.5"/>
+    <rectangle id="str5-pad" min="-9.5,37.5" max="-7.5,39.5"/>
+    <!--Basic Applies-->
+    <apply kit="regen" region="regen-pads"/>
+    <apply kit="speed" region="speed-pad"/>
+    <apply kit="clear" region="clear-pad"/>
+    <apply block-break="deny-explosion-damage" region="tnt-zone"/>
+    <apply block="never" region="not-tnt-zone"/>
+    <!--Resistance Applies-->
+    <apply kit="res1" region="res1-pad"/>
+    <apply kit="res2" region="res2-pad"/>
+    <apply kit="res3" region="res3-pad"/>
+    <apply kit="res4" region="res4-pad"/>
+    <apply kit="res5" region="res5-pad"/>
+    <!--Strength Applies-->
+    <apply kit="str1" region="str1-pad"/>
+    <apply kit="str2" region="str2-pad"/>
+    <apply kit="str3" region="str3-pad"/>
+    <apply kit="str4" region="str4-pad"/>
+    <apply kit="str5" region="str5-pad"/>
+</regions>
+<portals>
+    <portal region="endzone" destination="red-spawn"/>
+</portals>
+<respawn auto="true"/>
+<gamerules>
+    <naturalRegeneration>false</naturalRegeneration>
+</gamerules>
+</map>
