@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
-<map proto="1.4.0" game="Blitz">
+<map proto="1.4.0">
 <name>Spaceship Battles: Blitz</name>
-<version>1.0.6</version>
+<phase>development</phase>
+<version>1.0.9</version>
 <objective>Leak lava from the enemy's obsidian core and destory the monuments.</objective>
 <gamemode>blitz</gamemode>
 <gamemode>mixed</gamemode>
@@ -17,8 +18,12 @@
     <team id="red" color="dark red" max="24">Red</team>
     <team id="blue" color="blue" max="24">Blue</team>
 </teams>
+<respawn auto="true"/>
 <blitz>
     <lives>3</lives>
+    <filter>
+        <time>5m</time>
+    </filter>
 </blitz>
 <kits>
     <kit id="give-resistance" force="true">
@@ -121,5 +126,12 @@
 <itemremove>
     <item>obsidian</item>
     <item>coal</item>
+    <item>golden apple</item>
 </itemremove>
+<broadcasts>
+    <alert after="5s" every="5m">You'll only lose lives after 5 minutes!</alert>
+</broadcasts>
+<killreward>
+    <item>golden apple</item>
+</killreward>
 </map>
