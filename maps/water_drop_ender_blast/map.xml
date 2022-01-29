@@ -96,6 +96,8 @@
         <cuboid id="first-tnt" min="225,161,1" max="228,164,-2"/>
         <cuboid id="second-tnt" min="233,164,-2" max="236,167,1"/>
         <cuboid id="third-tnt" min="236,167,6" max="233,170,9"/>
+        <cuboid id="forth-tnt" min="225,168,3" max="227,172,6"/>
+        <cuboid id="fifth-tnt" min="229,171,-2" max="232,173,1"/>
     </union>
     <negative id="everywhere-else">
         <union id="tnt-regions">
