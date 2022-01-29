@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <map proto="1.4.0" game="Water Drop">
 <name>Water Drop: Ender Blast</name>
-<version>2.0</version>
+<version>2.0.1</version>
 <objective>Get to the bottom 2 times!</objective>
 <gamemode>Arcade</gamemode>
 <authors>
@@ -121,7 +121,7 @@
     <apply region="tnt-allowed" block-place="only-tnt"/>
     <apply region="everywhere" block-place="allowed-place" block-break="allowed-break" block-physics="allowed-physics"/>
     <!-- velocity -->
-    <apply region="velocity" velocity="5,12,0"/>
+    <apply region="velocity" velocity="7,12,0"/>
     <!-- kits -->
     <apply region="tnt-cube" kit="rocket-jumper"/>
     <apply region="outside" kit="players"/>
