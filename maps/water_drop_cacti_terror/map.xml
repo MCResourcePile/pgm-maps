@@ -115,13 +115,14 @@
     <kill-reward>
         <item material="tnt"/>
         <filter>
-            <kill-streak count="3" repeat="true"/>
+            <kill-streak count="5" repeat="true"/>
         </filter>
     </kill-reward>
 </kill-rewards>
 <tnt>
     <instantignite>on</instantignite>
     <fuse>1s</fuse>
+    <power>2</power>
 </tnt>
 <hunger>
     <depletion>off</depletion>
