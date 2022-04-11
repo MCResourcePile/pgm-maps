@@ -1,8 +1,9 @@
 <map proto="1.4.0" game="Wool Run">
 <name>Crazy's Wool Run</name>
-<version>1.0.0</version>
+<version>1.0.1</version>
 <objective>Be the last man standing</objective>
 <gamemode>arcade</gamemode>
+<created>2019-08-09</created>
 <authors>
     <author uuid="a9f11454-beac-4cc3-a138-1780802c8794"/> <!-- Crazy_ -->
 </authors>
