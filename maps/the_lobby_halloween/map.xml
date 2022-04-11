@@ -3,7 +3,7 @@
 <name>The Lobby: Halloween</name>
 <version>1.0.1</version>
 <objective>Get the most kills after 5 minutes!</objective>
-<created>2021-10-03</created>
+<created>2020-10-12</created>
 <authors>
     <author contribution="Lobby Builder">bleangamer</author>
     <author uuid="a9f11454-beac-4cc3-a138-1780802c8794" contribution="Map concept and XML"/> <!-- Crazy_ -->
