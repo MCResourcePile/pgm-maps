@@ -6,7 +6,7 @@ This repository has the purpose of providing new and classic PGM maps that have 
 
 All maps can be downloaded from the [PGM Collection](https://mcresourcepile.github.io/maps/pgm) on our website.
 
-All maps are assumed to be released under a [non-commercial license](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) unless otherwise stated on the ResourcePile website or in the included notice in the compiled downloads from the ResourcePile website. For more information on map use and acquisition, refer to our [map policy](https://mcresourcepile.github.io/policies/maps).
+Please refer to the individual map folders for license details. For maps without a license, please seek additional permissions from the original authors. For more information on map use and acquisition, refer to our [map policy](https://mcresourcepile.github.io/policies/maps).
 
 Contributing
 -----------------
