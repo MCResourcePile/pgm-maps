@@ -4,7 +4,7 @@
 <version>1.0.1</version>
 <objective>Get 10 points to win.</objective>
 <authors>
-	<author>Quijx16</author>
+    <author uuid="f48faa1f-aab2-44d5-94d2-8b0404f3a227"/> <!-- Quijx -->
 </authors>
 <contributors>
     <contributor uuid="1c898c77-b0cc-474a-8ce4-b5521f2b18e7" contribution="XML"/> <!-- Prodigy4532 -->
