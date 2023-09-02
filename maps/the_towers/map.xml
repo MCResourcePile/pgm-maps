@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<map proto="1.3.5">
+<name>The Towers</name>
+<version>1.0.1</version>
+<objective>Get 10 points to win.</objective>
+<authors>
+	<author>Quijx16</author>
+</authors>
+<contributors>
+    <contributor uuid="1c898c77-b0cc-474a-8ce4-b5521f2b18e7" contribution="XML"/> <!-- Prodigy4532 -->
+</contributors>
+<teams>
+    <team color="blue" min="5" max="8" max-overfill="8">Blue</team>
+    <team color="red" min="5" max="8" max-overfill="8">Red</team>
+</teams>
+<kits>
+    <kit name="spawn">
+        <item slot="8" amount="8">baked potato</item>
+        <item slot="9" amount="1">lapis block</item>
+        <potion duration="5" amplifier="100">regeneration</potion>
+        <potion duration="5" amplifier="100">damage resistance</potion>
+        <potion duration="5" amplifier="2">speed</potion>
+        <potion duration="3" amplifier="120">haste</potion>
+    </kit>
+    <kit name="red" parents="spawn">
+        <helmet color="cd0000">leather helmet</helmet>
+        <chestplate color="cd0000">leather chestplate</chestplate>
+        <leggings color="cd0000" enchantment="protection projectile:2">leather leggings</leggings>
+        <boots color="cd0000">leather boots</boots>
+    </kit>
+    <kit name="blue" parents="spawn">
+        <helmet color="0066cc">leather helmet</helmet>
+        <chestplate color="0066cc">leather chestplate</chestplate>
+        <leggings color="0066cc" enchantment="protection projectile:2">leather leggings</leggings>
+        <boots color="0066cc">leather boots</boots>protection projectile
+    </kit>
+</kits>
+<spawns>
+    <spawn team="blue" kit="blue" yaw="-90">
+        <region name="blue-spawn-room"/>
+    </spawn>
+    <spawn team="red" kit="red" yaw="90">
+        <region name="red-spawn-room"/>
+    </spawn>
+    <default yaw="180">0,25.5,1152</default>
+</spawns>
+<score>
+    <kills>0</kills>
+    <deaths>0</deaths>
+    <limit>10</limit>
+    <box value="1" filter="no-blue">
+            <cuboid name="redscore1" min="-82,33,1150" max="-86,27,1154"/>  
+    </box>
+    <box value="1" filter="no-red">  
+            <cuboid name="bluescore1"  min="82,33,1154" max="86,27,1150"/>           
+    </box>
+</score>
+<portals>
+    <portal x="@84" y="@20.5" z="@1152" yaw="@90">
+            <cuboid min="-82,33,1150" max="-86,27,1154"/>   
+    </portal>
+    <portal x="@-84" y="@20.5" z="@1152" yaw="@-90">
+            <cuboid min="82,33,1154" max="86,27,1150"/>     
+    </portal>
+</portals>
+<regions>
+    <apply enter="no-blue" message="You may not enter your own scorebox!">
+        <cuboid min="-82,33,1150" max="-86,27,1154"/>   
+    </apply>
+    <apply enter="no-red" message="You may not enter your own scorebox!">
+        <cuboid min="82,33,1154" max="86,27,1150"/>         
+    </apply>
+	<apply block="deny-all" message="You may not build in the void!">
+        <rectangle min="88,oo" max="oo,-oo"/>
+        <rectangle min="-87,oo" max="-oo,-oo"/>
+        <rectangle min="oo,1170" max="-oo,oo"/>
+        <rectangle min="oo,1135" max="-oo,-oo"/>
+    </apply>
+    <cuboid name="blue-spawn-room" min="-84,20.5,1152" max="-84,20.5,1152"/>
+    <cuboid name="red-spawn-room" min="84,20.5,1152" max="84,20.5,1152"/>
+</regions>
+<filters>
+    <filter name="no-red" parents="deny-all">
+        <allow><team>blue</team></allow>
+    </filter>
+    <filter name="no-blue" parents="deny-all">
+        <allow><team>red</team></allow>
+    </filter>
+</filters>
+<toolrepair>
+    <tool>bow</tool>
+    <tool>stone sword</tool>
+    <tool>leather helmet</tool>
+    <tool>leather chestplate</tool>
+    <tool>leather leggings</tool>
+    <tool>leather boots</tool>
+</toolrepair>
+</map>
